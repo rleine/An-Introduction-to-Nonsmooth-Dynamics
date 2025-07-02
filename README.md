@@ -2,7 +2,9 @@
 
 This repository contains all MATLAB source codes of the book
 
-Leine, R.I., "An Introduction to Nonsmooth Dynamics", in progress, to be published by Springer
+<blockquote>
+  Leine, R.I., "An Introduction to Nonsmooth Dynamics", in progress, to be published by Springer
+</blockquote>
 
 which I am currently writing. A license is in place, If you use the code, then please make a reference to the above book. If you like to have a preliminary draft version of the book, then please send me an E-mail.
 
