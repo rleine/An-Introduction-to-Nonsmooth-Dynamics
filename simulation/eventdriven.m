@@ -11,9 +11,14 @@ if nargin<11, tol_index_set = tol;end
 q = []; u = []; t = [];
 t0 = tb;
 
-% integrator settings
+% integrator settings and event reporting
 ode_file = 'eventdriven_ode';
 opts_ode = odeset('RelTol',reltol,'AbsTol',abstol,'Events','on','Refine',1);
+
+e_types = {'collision', 'detachment', 'zero sliding velocity', ...
+           'friction saturation'};
+formatspec = ['t0 = %g, IP = [%s], IPS = [%s], IPLplus = [%s], ' ...
+              'IPLmin = [%s], t_end = %g, %s\n'];
 
 n = length(sys.I); %number of contacts
 
@@ -59,15 +64,12 @@ end
         if isempty(IE)
             event = 'final time reached';
         else
-            e_types = {'collision', 'detachment', ...
-                'zero sliding velocity', 'friction saturation'};
             contact_num = mod(IE(1)-1,n)+1;
             idx = ceil(IE(1)/n);
             event = sprintf('%s at contact %d',e_types{idx},contact_num);
         end
-        fprintf(['t0 = %g, IP = %g, IPS = %g, IPLplus = %g, ' ...
-                 'IPLmin = %g, t_end = %g, %s\n'], ...
-                 t0, IP, IPS, IPLplus, IPLmin, T(end), event);
+        fprintf(formatspec, t0, num2str(IP'), num2str(IPS'), ...
+            num2str(IPLplus'), num2str(IPLmin'), T(end), event);
     end
 
 end

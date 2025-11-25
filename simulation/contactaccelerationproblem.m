@@ -44,7 +44,7 @@ while ~converged && k<maxiter
     gammaNdot = (GNN+GNL*QL)*lambdaN + GNS*lambdaS + WN'*(M\h) + nuN;
     gammaSdot = (GSN+GSL*QL)*lambdaN + GSS*lambdaS + WS'*(M\h) + nuS;
     lambdaN = -prox_CN(-lambdaN + sys.rN*gammaNdot);
-    lambdaS = -prox_CT(-lambdaS + sys.rT*gammaSdot,SS*mu.*lambdaN);
+    lambdaS = -prox_CT(-lambdaS + sys.rT*gammaSdot,SS*(mu.*lambdaN));
     error = norm(lambdaN - lambdaN_old) + norm(lambdaS - lambdaS_old);
     converged = error < tol;
     k = k + 1;
@@ -55,10 +55,10 @@ gammaSdot = (GSN+GSL*QL)*lambdaN + GSS*lambdaS + WS'*(M\h) + nuS;
 
 % index sets of persistent contacts
 IP = IN(-lambdaN + sys.rN*gammaNdot<=0); 
-IPS = intersect(IP,IS(abs(-lambdaS + sys.rN*gammaSdot)<SS*mu.*lambdaN));
+IPS = intersect(IP,IS(abs(-lambdaS + sys.rN*gammaSdot)<SS*(mu.*lambdaN)));
 IPLplus = intersect(IP,...
-    union(ILplus,IS(-lambdaS + sys.rT*gammaSdot>=SS*mu.*lambdaN)));
+    union(ILplus,IS(-lambdaS + sys.rT*gammaSdot>=SS*(mu.*lambdaN))));
 IPLmin = intersect(IP,...
-    union(ILmin,IS(-lambdaS + sys.rT*gammaSdot<=-SS*mu.*lambdaN)));
+    union(ILmin,IS(-lambdaS + sys.rT*gammaSdot<=-SS*(mu.*lambdaN))));
 
 udot = M\(h + (WN + WL*QL)*lambdaN + WS*lambdaS);
