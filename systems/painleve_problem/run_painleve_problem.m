@@ -30,7 +30,6 @@ subplot(2,3,2)
 plot(t,u(2,:),'o-');
 xlabel('$t$'), ylabel('$\dot{y}$'), grid
 
-
 subplot(2,3,3);
 plot(t,u(3,:),'o-');
 xlabel('$t$'), ylabel('$\dot{\varphi}$'), grid

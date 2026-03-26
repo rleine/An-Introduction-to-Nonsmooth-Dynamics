@@ -1,9 +1,10 @@
 classdef sys_painleve_problem < class_sys
 
     properties
-        m = 1;
-        s = 1;
-        gravity = 10;
+        m = 1
+        s = 1
+        gravity = 10
+        JS
     end
 
     methods
@@ -16,8 +17,8 @@ classdef sys_painleve_problem < class_sys
             obj.rT = 0.3;
             obj.ndof = 3;
             obj.I = 1;
-            JS = 1/3*obj.m*obj.s^2;
-            obj.M_const = diag([obj.m,obj.m,JS]);
+            obj.JS = 1/3*obj.m*obj.s^2;
+            obj.M_const = diag([obj.m,obj.m,obj.JS]);
             obj.h_const = [ 0;
                            -obj.m*obj.gravity;
                             0];

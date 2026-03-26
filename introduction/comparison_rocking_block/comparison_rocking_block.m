@@ -109,7 +109,3 @@ set(figure(4), 'Position', [100, 100, 700, 200]);
 plot(t_e,theta_dot,'k',t1,x1(:,6),'r:',t2,x2(:,6),'b--',t3,x3(:,6),'m-.')
 xlabel('$t$'), ylabel('$\dot{\varphi}$')
 legend(labels)
-
-
-
-

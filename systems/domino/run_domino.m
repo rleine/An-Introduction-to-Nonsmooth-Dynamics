@@ -7,7 +7,7 @@
 
 t1 = 1;
 
-n = 30;           % number of dominos
+n = 30;           % number of dominoes
 a = 0.5*7.7e-3;   % half-thickness
 b = 0.5*43.2e-3;  % half-height
 w = 21.9e-3;      % width
@@ -46,4 +46,5 @@ toc
 
 phi = q(3:3:3*n,:);
 plot(t,phi)
+animate_domino(q, n, a, b, 0, 10)
 

@@ -1,5 +1,4 @@
 classdef sys_rocking_block < class_sys
-% Rocking block system 
 
     properties
         a

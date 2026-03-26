@@ -1,4 +1,4 @@
-function animate_dominos(q, n, a, b, saveVideo, skip)
+function animate_domino(q, n, a, b, saveVideo, skip)
 
     if nargin < 5, saveVideo = false; end
     if nargin < 6, skip = 0; end

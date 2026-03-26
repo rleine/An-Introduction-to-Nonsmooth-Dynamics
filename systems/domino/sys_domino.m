@@ -1,6 +1,4 @@
 classdef sys_domino < class_sys
-% Domino system 
-% Remco Leine, Feb 2026
 
     properties
         n

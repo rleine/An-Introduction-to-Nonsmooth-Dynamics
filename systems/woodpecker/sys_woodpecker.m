@@ -2,19 +2,19 @@ classdef sys_woodpecker < class_sys
 % Glocker's model of the Woodpecker Toy 
 
     properties
-        mM = 0.0003;
-        JM = 5.0e-9;
-        mS = 0.0045;
-        JS = 7.0e-7;
-        lM = 0.010;
-        lG = 0.015;
-        lS = 0.0201;
-        rM = 0.0031;
-        r0 = 0.0025;
-        hM = 0.0058;
-        hS = 0.02;
-        gravity = 9.81;
-        cphi = 0.0056;
+        mM = 0.0003
+        JM = 5.0e-9
+        mS = 0.0045
+        JS = 7.0e-7
+        lM = 0.010
+        lG = 0.015
+        lS = 0.0201
+        rM = 0.0031
+        r0 = 0.0025
+        hM = 0.0058
+        hS = 0.02
+        gravity = 9.81
+        cphi = 0.0056
     end
 
     methods

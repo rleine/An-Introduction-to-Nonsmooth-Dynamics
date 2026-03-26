@@ -13,7 +13,7 @@ classdef sys_slider_crank < class_sys
         J1 = 7.4e-5
         J2 = 5.9e-4
         J3 = 2.7e-6
-        gravity = 9.81;
+        gravity = 9.81
     end
 
     methods

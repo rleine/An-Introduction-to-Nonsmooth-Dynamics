@@ -3,7 +3,7 @@
 m = 1; R = 0.1; gravity = 10; mu = 0.05;            % set parameters
 eN = 0.8; eT = 0; JS = 1/2*m*R^2;
 
-sys = sys_bouncingball2D(m,JS,R,gravity,mu,eN,eT);  % create system
+sys = sys_planar_bouncing_ball(m,JS,R,gravity,mu,eN,eT);  % create system
  
 v = 1;                                              % vertical initial speed
 Omega_c = 3*(1+eN)*mu*v/(1+eT)/R                    % critical angular vel.

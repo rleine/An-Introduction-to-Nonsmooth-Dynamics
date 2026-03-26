@@ -1,4 +1,9 @@
-sys = sys_rocking_block(0.0125,0.05);
+
+a = 0.0125; 
+b = 0.05;
+m = 1;
+J = 1/12*m*(4*a^2+4*b^2);
+sys = sys_rocking_block(a,b,m,J,9.81,0.3,1e-1);
 
 phi0 = 8/180*pi;
 q0 = [0;sys.a*sin(phi0)+sys.b*cos(phi0);phi0];       

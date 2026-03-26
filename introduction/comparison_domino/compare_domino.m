@@ -33,9 +33,12 @@ phi_ode45 = q_ode45(3:3:end,:);
 v_ode45 = calc_speed(t_ode45,phi_ode45,n,d);
 
 %% post-processing and compare
-load exp_data_18
-k_exp = round(exp_data(:,1));
-v_exp = exp_data(:,2);
+fig = openfig('lambda=1.8t.fig','invisible');
+dataObjs = findobj(fig,'-property','YData');
+k_exp = dataObjs(1).XData';
+v_exp = dataObjs(1).YData';
+close all
+
 figure(1)
 plot(1:n,v,'*-r',1:n,v_RK4,'v-b',1:n,v_ode45,'^-m',k_exp,v_exp,'o-k')
 xlabel('domino sequence number')
@@ -43,14 +46,19 @@ ylabel('intrinsic collision speed [m/s]')
 legend('Moreau','Hunt-Crossley RK4','Hunt-Crossley ode45','Measurement data')
 
 
+fig = openfig('inclined_angle_L=1.8h.fig','invisible');
+dataObjs = findobj(fig,'-property','YData');
+t_exp = dataObjs(1).XData';
+phi_exp = dataObjs(1).YData';
+close(fig);
+
 figure(2)
-load exp_data_18_inclined_angle
 num = 20;
 offset = @(phi) find(abs(phi(num, :)) > 1e-3, 1, 'first');
 plot(t-t(offset(phi)),phi(num,:)*180/pi+90,'r',...
      t_RK4-t_RK4(offset(phi_RK4)),phi_RK4(num,:)*180/pi+90,'b',...
      t_ode45-t_ode45(offset(phi_ode45)),phi_ode45(num,:)*180/pi+90,'m',...
-     inclined_angle_exp_18(:,1), inclined_angle_exp_18(:,2),'o-k')
+     t_exp, phi_exp,'o-k')
 axis([-0.001 0.22 10 100])
 xlabel('Shifted time [s]')
 ylabel('Domino inclined angle (deg)')

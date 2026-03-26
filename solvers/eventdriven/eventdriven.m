@@ -30,10 +30,10 @@ while t0<te
     gammaT = WT'*u0 + chiT;
 
     IC = find( gN<=0 );
-    IN = intersect(IC,find( gammaN<tol_index_set));
-    IS = intersect(IN,find( abs(gammaT)<tol_index_set ));
-    ILplus = intersect(IN,find( gammaT>tol_index_set ));
-    ILmin = intersect(IN,find( gammaT<-tol_index_set ));
+    IN = intersect(IC,find( gammaN < tol_index_set));
+    IS = intersect(IN,find( abs(gammaT) < tol_index_set ));
+    ILplus = intersect(IN,find( gammaT > tol_index_set ));
+    ILmin = intersect(IN,find( gammaT < -tol_index_set ));
     
     % solve contact acceleration problem to find new index sets
     [IP,IPS,IPLplus,IPLmin] = contactaccelerationproblem(sys,t0,q0,u0,...
@@ -73,5 +73,3 @@ end
     end
 
 end
-
-

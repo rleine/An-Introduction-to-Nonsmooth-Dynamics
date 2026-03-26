@@ -1,11 +1,11 @@
 classdef sys_block_on_belt < class_sys
 
     properties
-        m = 1;
-        k = 1;
-        gravity = 1;
-        vdr = 0.2;
-        delta = 3;
+        m = 1
+        k = 1
+        gravity = 1
+        vdr = 0.2
+        delta = 3
     end
 
     methods

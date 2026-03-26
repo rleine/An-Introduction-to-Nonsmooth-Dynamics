@@ -1,7 +1,7 @@
 %run_rockingblock
-% Exercise 3.2
+% Exercise 4.3
 
-% Exercise 3.2a
+% Exercise 4.3a
 a = 0.0125; 
 b = 0.05;
 m = 1;
@@ -20,7 +20,7 @@ plot(t,gN);
 xlabel('$t$'), ylabel('$g_N$')
 legend('$g_{N1}$','$g_{N2}$')
 
-% Exercise 3.2b
+% Exercise 4.3b
 a = 0.05; 
 b = 0.0125;
 m = 1;
