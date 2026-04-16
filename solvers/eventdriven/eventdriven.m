@@ -1,6 +1,6 @@
 function [t,q,u] = eventdriven(sys,tb,te,q0,u0,...
     reltol,abstol,tol,maxiter,trace,tol_index_set)
-% eventdriven.m : event driven simulation, Remco Leine, June 2024
+% eventdriven.m : event-driven integrration method, Remco Leine, June 2024
 if nargin<6, reltol = 1e-8; end
 if nargin<7, abstol = 1e-13; end
 if nargin<8, tol = reltol/100; end
