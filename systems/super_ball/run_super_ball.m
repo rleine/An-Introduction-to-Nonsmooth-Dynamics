@@ -18,7 +18,7 @@ t0 = 0;
 te = 1.2;
 
 %% e_T = 1, ball comes back
-[t_e,q_e,u_e] = eventdriven(sys,t0,te,q0,u0,1e-11,1e-14,1e-11,1000,1);
+[t_e,q_e,u_e] = eventdriven(sys1,t0,te,q0,u0,1e-11,1e-14,1e-11,1000,1);
 set(figure(1), 'Position', [100, 100, 300, 300]);
 plot(q_e(1,:),q_e(2,:),'o-')
 axis([-0.1 0.8 0 1]);
@@ -31,7 +31,7 @@ animate_superball(q, R, 0, 3, 0)
 
 
 %% e_T = 0, ball does not come back
-[t_e,q_e,u_e] = eventdriven(sys,t0,te,q0,u0,1e-11,1e-14,1e-11,1000,1);
+[t_e,q_e,u_e] = eventdriven(sys2,t0,te,q0,u0,1e-11,1e-14,1e-11,1000,1);
 
 
 set(figure(3), 'Position', [100, 100, 300, 300]);
